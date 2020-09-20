@@ -11,7 +11,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 5), () {
-      Navigator.pushNamed(context, "home");
+      Navigator.pushNamed(context, "login");
     });
   }
 
@@ -86,7 +86,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
