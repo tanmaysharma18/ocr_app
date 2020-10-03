@@ -32,7 +32,19 @@ class _MyRegState extends State<MyReg> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 80,
+              height: 20,
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, "login");
+              },
+            ),
+            SizedBox(
+              height: 18,
             ),
             Padding(
               padding: EdgeInsets.all(20),
@@ -42,7 +54,7 @@ class _MyRegState extends State<MyReg> {
                   FadeAnimation(
                     1,
                     Text(
-                      "Signin",
+                      "Sign up",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
