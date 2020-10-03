@@ -13,6 +13,7 @@ class _MyLoginState extends State<MyLogin> {
 
   String email;
   String password;
+  bool text = true;
   bool sspin = false;
   register() {
     Navigator.pushNamed(context, "reg");
@@ -122,6 +123,7 @@ class _MyLoginState extends State<MyLogin> {
                                       },
                                       decoration: InputDecoration(
                                         hintText: "Email",
+                                        labelText: "Email",
                                         hintStyle:
                                             TextStyle(color: Colors.grey),
                                         border: InputBorder.none,
@@ -138,14 +140,23 @@ class _MyLoginState extends State<MyLogin> {
                                       ),
                                     ),
                                     child: TextField(
-                                      obscureText: true,
+                                      obscureText: text,
                                       onChanged: (value) {
                                         password = value;
                                       },
                                       decoration: InputDecoration(
                                         hintText: "Password",
+                                        labelText: "Password",
                                         hintStyle:
                                             TextStyle(color: Colors.grey),
+                                        suffixIcon: IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              text = !text;
+                                            });
+                                          },
+                                          icon: Icon(Icons.visibility),
+                                        ),
                                         border: InputBorder.none,
                                       ),
                                     ),

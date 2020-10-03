@@ -12,6 +12,7 @@ class _MyRegState extends State<MyReg> {
 
   String email;
   String password;
+  bool text = true;
 
   @override
   Widget build(BuildContext context) {
@@ -125,6 +126,7 @@ class _MyRegState extends State<MyReg> {
                                     onChanged: (value) {},
                                     decoration: InputDecoration(
                                       hintText: "Email",
+                                      labelText: "Email",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none,
                                     ),
@@ -140,11 +142,20 @@ class _MyRegState extends State<MyReg> {
                                     ),
                                   ),
                                   child: TextField(
-                                    obscureText: true,
+                                    obscureText: text,
                                     onChanged: (value) {},
                                     decoration: InputDecoration(
                                       hintText: "Password",
+                                      labelText: "Password",
                                       hintStyle: TextStyle(color: Colors.grey),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            text = !text;
+                                          });
+                                        },
+                                        icon: Icon(Icons.visibility),
+                                      ),
                                       border: InputBorder.none,
                                     ),
                                   ),
